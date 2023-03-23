@@ -8,7 +8,7 @@ namespace KonsollApplikasjonOppgave
 {
     public class TotalMarks
     {
-        public static void TotalMarksCalculation()
+        public static string TotalMarksCalculation()
            
         {
             try
@@ -64,12 +64,14 @@ namespace KonsollApplikasjonOppgave
 
                 }
 
-                Console.WriteLine("The total is {0}% and you're in {1}", percentage, division);
+                return division;
             }
             catch(Exception e) 
             {
-            Console.WriteLine(e.Message);
+            
+                return e.Message;
             }
+
 
 
 

@@ -30,71 +30,62 @@ namespace KonsollApplikasjonOppgave
 
                 operation = Console.ReadLine();
 
-                if (operation == "1")
+                switch(operation)
                 {
-                    TotalMarks.TotalMarksCalculation();
-                }
+                    case "1": Console.WriteLine(TotalMarks.TotalMarksCalculation());
+                        break;
 
-                else if (operation == "2")
-                {
-                    CheckIfNumberIsPrime.CheckPrime();
-                }
+                    case "2":
+                        Console.WriteLine(CheckIfNumberIsPrime.CheckPrime());
+                        break;
 
-                else if (operation == "3")
-                {
-                    DeleteAllDuplicatesFromArray.DelAllDuplicatesArray();
-                }
+                    case "3":
+                        DeleteAllDuplicatesFromArray.DelAllDuplicatesArray();
+                        break;
 
-                else if (operation == "4")
-                {
-                    string strtwo;
-                    Console.Write("Please Enter a string : ");
-                    strtwo = Console.ReadLine();
-                    Console.WriteLine("\"" + strtwo + "\"" + " contains {0} spaces", CountSpaces.FuncCountSpaces(strtwo));
-                }
+                    case "4":
+                        string strtwo;
+                        Console.Write("Please Enter a string : ");
+                        strtwo = Console.ReadLine();
+                        Console.WriteLine("\"" + strtwo + "\"" + " contains {0} spaces", CountSpaces.FuncCountSpaces(strtwo));
+                        break;
 
-                else if (operation == "5")
-                {
-                    var itemlist = (from c in Item_Mast.Getitem()
-                                    select c.ItemDes)
-                                    .Distinct()
-                                    .OrderBy(x => x);
+                    case "5":
+                        try
+                        {
+                            var itemlist = (from c in Item_Mast.Getitem()
+                                select c.ItemDes)
+                                .Distinct()
+                                .OrderBy(x => x);
 
-                    foreach (var item in itemlist)
-                        Console.WriteLine(item);
-                }
+                            foreach (var item in itemlist)
+                                Console.WriteLine(item);
+                        }
+                        catch (Exception e) { Console.WriteLine(e.Message); }
+                        break;
 
-                else if (operation == "6")
-                {
-                    StringExercise.Sort();
-                }
+                    case "6":
+                        StringExercise.Sort();
+                        break;
 
-                else if (operation == "7")
-                {
-                    RemoveItemsFromList.RemoveItems();
-                }
+                    case "7":
+                        RemoveItemsFromList.RemoveItems();
+                        break;
 
-                else if (operation == "8")
-                {
-                    CopyAllElementsFromArray.CopyAll();
-                }
+                    case "8":
+                        CopyAllElementsFromArray.CopyAll();
+                        break;
 
-                else if (operation == "9")
-                {
-                    Console.Write("Enter the string you want to modify: ");
-                    string myString = Console.ReadLine();
+                    case "9":
+                        Console.Write("Enter the string you want to modify: ");
+                        string myString = Console.ReadLine();
 
-                    RemoveAllSpaceFromString.DisplayResult(RemoveAllSpaceFromString.RemoveWhiteSpace(myString));      
-                }
-
-                else if (operation == "10")
-                {
-                    break;
-                }
-
-                else
-                {
-                    Console.WriteLine("Invalid input");
+                        Console.WriteLine(RemoveAllSpaceFromString.RemoveWhiteSpace(myString));
+                        break;
+                    case "10": System.Environment.Exit(0);
+                        break;
+                    default: Console.WriteLine("Invalid input");
+                            break;
                 }
 
 

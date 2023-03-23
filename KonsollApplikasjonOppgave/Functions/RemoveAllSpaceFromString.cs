@@ -11,12 +11,12 @@ namespace KonsollApplikasjonOppgave
 
         public static string RemoveWhiteSpace(string message)
         {
-            return message.Replace(" ", "");
-        }
-
-        public static void DisplayResult(string message)
-        {
-            Console.WriteLine($"Your modified string is: {message}");
+            try
+            {
+                return message.Replace(" ", "");
+            } 
+            catch (Exception e) { return e.Message; }
+            
         }
     }
 }

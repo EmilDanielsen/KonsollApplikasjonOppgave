@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace KonsollApplikasjonOppgave
 {
-    internal class Item_Mast
+    public class Item_Mast
     {
+        
         public int ItemId { get; set; }
         public string ItemDes { get; set; }
 

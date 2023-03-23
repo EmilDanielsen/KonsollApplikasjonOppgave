@@ -8,7 +8,7 @@ namespace KonsollApplikasjonOppgave
 {
     public class CheckIfNumberIsPrime
     {
-        public static void CheckPrime()
+        public static string CheckPrime()
         {
             try
             {
@@ -32,14 +32,14 @@ namespace KonsollApplikasjonOppgave
                     i++;
                 }
                 if (f == 0)
-                    Console.WriteLine(num + " is a Prime Number");
+                    return (num + " is a Prime Number");
                 else
-                    Console.WriteLine(num + " is not a Prime Number");
+                   return (num + " is not a Prime Number");
             } 
             
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
+                return e.Message;
             }
 
 
