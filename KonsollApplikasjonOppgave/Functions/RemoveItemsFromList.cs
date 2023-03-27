@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,8 +9,9 @@ namespace KonsollApplikasjonOppgave
 {
     public class RemoveItemsFromList
     {
-        public static void RemoveItems()
+        public static IEnumerable<string> RemoveItems()
         {
+            IEnumerable<string> _result = new List<string>();
             try
             {
                 List<string> list = new List<string>();
@@ -31,16 +33,14 @@ namespace KonsollApplikasjonOppgave
 
                 list.RemoveRange(1, 4);
 
-                var _result = from n in list
+                _result = from n in list
                               select n;
                 Console.Write("\nHere is the list after removing the four items starting from the list : \n");
-                foreach (var removeChar in _result)
-                {
-                    Console.WriteLine("Char: {0} ", removeChar);
-                }
+
             } 
             catch(Exception e) {Console.WriteLine(e.Message);}
-           
+         
+            return _result;
         }
     }
 }

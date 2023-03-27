@@ -8,8 +8,9 @@ namespace KonsollApplikasjonOppgave
 {
     public class DeleteAllDuplicatesFromArray
     {
-        public static void DelAllDuplicatesArray()
+        public static List<int> DelAllDuplicatesArray()
         {
+            List<int> list = new List<int>();
             try
             {
                 int[] arr = new int[100];
@@ -56,11 +57,12 @@ namespace KonsollApplikasjonOppgave
                 Console.WriteLine("\nArray elements after deleting duplicates : ");
                 for (i = 0; i < num; i++)
                 {
-                    Console.WriteLine(arr[i]);
+                    list.Add(arr[i]);
                 }
             }
             catch (Exception e) {Console.WriteLine(e.Message);}
-      
+            
+            return list;
         }
     }
 }

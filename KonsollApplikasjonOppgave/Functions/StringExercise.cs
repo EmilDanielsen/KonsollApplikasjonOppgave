@@ -8,13 +8,16 @@ namespace KonsollApplikasjonOppgave
 {
     public class StringExercise
     {
-        public static void Sort()
+        public static List<String> Sort()
         {
+            string[] arr1;
+            string temp;
+            int num, i, j, lenghth;
+            List<String> list = new List<String>();
+
             try
             {
-                string[] arr1;
-                string temp;
-                int num, i, j, lenghth;
+               
 
                 Console.Write("Input number of strings :");
                 num = Convert.ToInt32(Console.ReadLine());
@@ -41,15 +44,15 @@ namespace KonsollApplikasjonOppgave
                 Console.Write("\n\nAfter sorting the array appears like : \n");
                 for (i = 0; i < lenghth; i++)
                 {
-                    Console.WriteLine(arr1[i] + " ");
+                    list.Add(arr1[i] + " ");
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-            
 
+            return list;
  
         }
     }

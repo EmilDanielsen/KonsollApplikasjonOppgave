@@ -8,14 +8,16 @@ namespace KonsollApplikasjonOppgave
 {
     public class CopyAllElementsFromArray
     {
-        public static void CopyAll()
+        public static List<String> CopyAll()
         {
+            List<String> list = new List<String>();
             try
             {
                 int[] arr = new int[100];
 
                 int[] first = new int[100];
                 int[] second = new int[100];
+                
 
                 int i, num;
 
@@ -46,14 +48,16 @@ namespace KonsollApplikasjonOppgave
                 Console.WriteLine("\nElements of second array are:");
                 for (i = 0; i < num; i++)
                 {
-                    Console.Write(second[i] + "\t");
+                    list.Add(second[i] + "\t");
                 }
+                
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-           
+            return list;
+
         }
     }
 }

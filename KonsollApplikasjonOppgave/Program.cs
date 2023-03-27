@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -40,7 +41,11 @@ namespace KonsollApplikasjonOppgave
                         break;
 
                     case "3":
-                        DeleteAllDuplicatesFromArray.DelAllDuplicatesArray();
+                        List<int> deleteDuplicatesList = DeleteAllDuplicatesFromArray.DelAllDuplicatesArray();
+                        foreach (var item in deleteDuplicatesList)
+                        {
+                            Console.WriteLine(item);
+                        }
                         break;
 
                     case "4":
@@ -65,15 +70,28 @@ namespace KonsollApplikasjonOppgave
                         break;
 
                     case "6":
-                        StringExercise.Sort();
+                        List<String> sortlist = StringExercise.Sort();
+                        foreach (var item in sortlist)
+                        {
+                            Console.WriteLine(item);
+                        }
                         break;
 
                     case "7":
-                        RemoveItemsFromList.RemoveItems();
+                        IEnumerable<string> _result = RemoveItemsFromList.RemoveItems();
+                        foreach (var removeChar in _result)
+                        {
+                            Console.WriteLine("Char: {0} ", removeChar);
+                        }
+
                         break;
 
                     case "8":
-                        CopyAllElementsFromArray.CopyAll();
+                        List<String> list = CopyAllElementsFromArray.CopyAll();
+                        foreach (var item in list)
+                        { 
+                            Console.WriteLine(item);
+                        }
                         break;
 
                     case "9":
